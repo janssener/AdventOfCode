@@ -10,8 +10,9 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            var sum = Day3.Run2();
-            Console.WriteLine("finally: " + sum);
+            int result = Day4.Run2();
+
+            Console.WriteLine("finally: " + result);
             Console.ReadKey();
         }
     }
