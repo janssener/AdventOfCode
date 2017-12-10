@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode
 {
+    /// <summary>
+    /// refactor to use 1 core logic loop
+    /// </summary>
     public static class Day10
     {
         private static int skipSize = 0;
@@ -45,12 +48,10 @@ namespace AdventOfCode
         private static int RunLogic1()
         {
             int selectedLength = 0;
-
             List<int> sequences = new List<int>();
-
             List<int> listOfNums = new List<int>();
-            for (int i = 0; i < 256; i++) listOfNums.Add(i);
 
+            for (int i = 0; i < 256; i++) listOfNums.Add(i);
 
             using (StreamReader sr = new StreamReader(@""))
             {
@@ -100,10 +101,10 @@ namespace AdventOfCode
             while (loopCounter < asciiSeq.Count)
             {
                 selectedLength = asciiSeq[loopCounter];
+
                 if (selectedLength > hashIn.Count) continue;
 
                 var tempList = new List<int>();
-
                 for (int i = 0; i < selectedLength; i++) tempList.Add(hashIn[(currentPos + i) % hashIn.Count]);
 
                 tempList.Reverse();
