@@ -33,7 +33,7 @@ namespace AdventOfCode
 
             var differenceFromMax = maxInRung - input;
             var sideDistance = Math.Sqrt(maxInRung);
-            var sideWeAreOn = Math.Truncate(differenceFromMax / (sideDistance - 1));
+            var sideWeAreOn = (int)Math.Truncate(differenceFromMax / (sideDistance - 1));
 
             switch (sideWeAreOn)
             {
