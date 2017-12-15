@@ -16,7 +16,7 @@ namespace AdventOfCode
         {
             // vall into day 10
             
-            var resultHash = Day10.RunLogic2(new List<string>("flqrgnkx-" + i);
+            var resultHash = Day10.RunLogic2(new List<int>("flqrgnkx-" + i);
             return 0;
         }
 
