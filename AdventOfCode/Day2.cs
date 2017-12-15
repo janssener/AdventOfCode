@@ -10,7 +10,7 @@ namespace AdventOfCode
     public static class Day2
     {
 
-        public static int Run3()
+        public static int Run()
         {
             int checksum = 0;
 
@@ -28,7 +28,7 @@ namespace AdventOfCode
             return checksum;
         }
 
-        public static int Run4()
+        public static int Run2()
         {
             int checksum = 0;
 
