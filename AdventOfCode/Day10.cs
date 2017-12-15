@@ -25,10 +25,19 @@ namespace AdventOfCode
             skipSize = 0;
             currentPos = 0;
             var sparseHash = new List<int>();
+            List<int> asciiSeq = new List<int>();
+
+            using (StreamReader sr = new StreamReader(@""))
+            {
+                asciiSeq.AddRange(sr.ReadLine().Select(t => (int)t));
+            }
+
+            // add static ending
+            asciiSeq.AddRange(new List<int> { 17, 31, 73, 47, 23 });
 
             for (int i = 0; i < 256; i++) sparseHash.Add(i);
 
-            for (int i = 0; i < 64; i++) sparseHash = RunLogic2(sparseHash);
+            for (int i = 0; i < 64; i++) sparseHash = RunLogic2(sparseHash, asciiSeq);
 
             string denseHash = "";
 
@@ -41,7 +50,7 @@ namespace AdventOfCode
 
                 denseHash += result.ToString("X2");
             }
-            var t = denseHash.Count();
+
             return denseHash;
         }
 
@@ -83,20 +92,10 @@ namespace AdventOfCode
             return listOfNums[0] * listOfNums[1];
         }
 
-        private static List<int> RunLogic2(List<int> hashIn)
+        private static List<int> RunLogic2(List<int> hashIn, List<int> asciiSeq)
         {
             int selectedLength = 0;
-
             int loopCounter = 0;
-            List<int> asciiSeq = new List<int>();
-
-            using (StreamReader sr = new StreamReader(@""))
-            {
-                asciiSeq.AddRange(sr.ReadLine().Select(t => (int)t));
-            }
-
-            // add static ending
-            asciiSeq.AddRange(new List<int> { 17, 31, 73, 47, 23 });
 
             while (loopCounter < asciiSeq.Count)
             {

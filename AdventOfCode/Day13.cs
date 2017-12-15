@@ -103,7 +103,7 @@ namespace AdventOfCode
         private static List<FirewallSection> GetFireWall()
         {
             List<FirewallSection> firewall = new List<FirewallSection>();
-            using (StreamReader sr = new StreamReader(@""))
+            using (StreamReader sr = new StreamReader(@"C:\Repos\AdventOfCode\AdventOfCode\Day13Input.txt"))
             {
                 while (!sr.EndOfStream)
                 {
