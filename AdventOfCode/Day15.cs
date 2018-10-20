@@ -30,10 +30,10 @@ namespace AdventOfCode
                 aVal = (aVal * AFactor) % DivideFactor;
                 bVal = (bVal * BFactor) % DivideFactor;
 
-                if((aVal & 0xFFFF) == (bVal & 0xFFFF))
+                if ((aVal & 0xFFFF) == (bVal & 0xFFFF))
                 {
                     totalMatches++;
-                }            
+                }
             }
 
             return totalMatches;
@@ -52,27 +52,26 @@ namespace AdventOfCode
             {
                 aVal = (aVal * AFactor) % DivideFactor;
                 bVal = (bVal * BFactor) % DivideFactor;
-                
+
                 // multiple of 4
-                if(aVal % 4 == 0)
+                if (aVal % 4 == 0)
                 {
                     aValQueue.Enqueue(aVal);
                 }
 
                 // multiple of 2
-                if(bVal % 8 == 0)
+                if (bVal % 8 == 0)
                 {
                     bValQueue.Enqueue(bVal);
                 }
 
-                if(aValQueue.Count > 0 && bValQueue.Count > 0)
+                if (aValQueue.Count > 0 && bValQueue.Count > 0)
                 {
                     if ((aValQueue.Dequeue() & 0xFFFF) == (bValQueue.Dequeue() & 0xFFFF))
                     {
                         totalMatches++;
                     }
                 }
-
             }
 
             return totalMatches;
