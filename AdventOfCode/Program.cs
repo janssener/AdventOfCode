@@ -10,7 +10,7 @@ namespace AdventOfCode
     {
         static void Main(string[] args)
         {
-            var result = Day14.Run2();
+            var result = Day15.Run2();
             
             Console.WriteLine("finally: " + result);
 
