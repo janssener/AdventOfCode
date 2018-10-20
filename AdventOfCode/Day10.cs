@@ -40,7 +40,7 @@ namespace AdventOfCode
             for (int i = 0; i < 64; i++) sparseHash = RunLogic2(sparseHash, asciiSeq);
 
             string denseHash = "";
-
+            
             // make dense hash
             for (int i = 0; i < 16; i++)
             {
@@ -92,7 +92,7 @@ namespace AdventOfCode
             return listOfNums[0] * listOfNums[1];
         }
 
-        private static List<int> RunLogic2(List<int> hashIn, List<int> asciiSeq)
+        public static List<int> RunLogic2(List<int> hashIn, List<int> asciiSeq)
         {
             int selectedLength = 0;
             int loopCounter = 0;
